@@ -3,7 +3,7 @@
 namespace Pterodactyl\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Pterodactyl\Repositories\Daemon\FileRepository;
+use Pterodactyl\Repositories\Wings\FileRepository;
 use Pterodactyl\Repositories\Daemon\PowerRepository;
 use Pterodactyl\Repositories\Eloquent\EggRepository;
 use Pterodactyl\Repositories\Eloquent\NestRepository;
@@ -51,7 +51,7 @@ use Pterodactyl\Contracts\Repository\DatabaseHostRepositoryInterface;
 use Pterodactyl\Contracts\Repository\Daemon\CommandRepositoryInterface;
 use Pterodactyl\Contracts\Repository\ServerVariableRepositoryInterface;
 use Pterodactyl\Contracts\Repository\Daemon\ConfigurationRepositoryInterface;
-use Pterodactyl\Repositories\Daemon\ServerRepository as DaemonServerRepository;
+use Pterodactyl\Repositories\Wings\WingsServerRepository as DaemonServerRepository;
 use Pterodactyl\Contracts\Repository\Daemon\ServerRepositoryInterface as DaemonServerRepositoryInterface;
 
 class RepositoryServiceProvider extends ServiceProvider

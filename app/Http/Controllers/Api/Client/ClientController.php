@@ -52,9 +52,11 @@ class ClientController extends ClientApiController
                 break;
         }
 
-        $servers = $this->repository->filterUserAccessServers(
-            $request->user(), $filter, config('pterodactyl.paginate.frontend.servers')
-        );
+        $servers = $this->repository
+            ->setSearchTerm($request->input('query'))
+            ->filterUserAccessServers(
+                $request->user(), $filter, config('pterodactyl.paginate.frontend.servers')
+            );
 
         return $this->fractal->collection($servers)
             ->transformWith($this->getTransformer(ServerTransformer::class))
