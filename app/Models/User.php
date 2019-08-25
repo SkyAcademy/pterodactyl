@@ -212,9 +212,9 @@ class User extends Model implements
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasManyThrough
      */
-    public function permissions()
+    public function subuserPermissions()
     {
-        return $this->hasManyThrough(Permission::class, Subuser::class);
+        return $this->hasManyThrough(SubuserPermission::class, Subuser::class);
     }
 
     /**
